@@ -89,6 +89,12 @@
   font-weight:bold;
    
 }
+.btn{
+    position: relative;top: -3.8em;
+  /* margin-top: -1em; */
+   margin-left: 45%;
+   padding:10px;
+}
     </style>
 </head>
 <body>
@@ -123,25 +129,44 @@
         </div>
         <div class="main">
             <h1 style="color:rgb(1,126,192);text-align:center">Payment</h1>
-            <div style="width:270px;margin-left:22%;">
-                <p class="side" >ENTER NAME</p>
-                <input class="change"type="text" placeholder="enter name">
+            <form id="fo" style="width:270px;margin-left:22%;">
+                <p class="side"  >ENTER NAME</p>
+                <input class="change" id="n1"type="text" placeholder="enter name">
                 <br>
                 <p class="side">ENTER CARD NUMBER</p>
-                <input class="change" type="number" placeholder="enter card number">
+                <input class="change" id="n2" type="number" placeholder="enter card number">
                 <br>
                 <p class="side">ENTER CVV</p>
-                <input  class="change"type="text" placeholder="enter CVV">
+                <input  class="change" id="n3"type="text" placeholder="enter CVV">
                 <br>
                 <p class="side">ENTER EXPIRE DATA</p>
-                <input class="change"type="number" placeholder="expire data">
+                <input class="change"id="n4"type="number" placeholder="expire data">
                 <br>
-                <button onclick="window.location.href='total.html'" style="margin-top:20px;margin-bottom:10px;margin-left:10%;padding:10px;">Back</button>
-                <button  style="margin-top:20px;margin-bottom:10px;margin-left:20%;padding:10px;" onclick= "window.location.href='otp.html'">Pay</button>
-            </div>
-            
+              
+                <button style="margin-top:40px;margin-bottom:10px;margin-left:40%;padding:9px;" >Pay</button>
+            </form>
+       
         </div>
-    
+        <button class="btn" >Back</button>
   
 </body>
 </html>
+<script>
+    document.querySelector("#fo").addEventListener("submit",form)
+    function form(event){
+        event.preventDefault();
+        // console.log(document.querySelector("#fo"))
+        var input1=document.querySelector("#n1").value
+        var input2=document.querySelector("#n2").value
+        var input3=document.querySelector("#n3").value
+        var input4=document.querySelector("#n4").value
+        // console.log(input1,input2,input3,input4)
+        if(input1=="" || input2=="" || input3=="" || input4==""){
+            alert("please fill all the forms")
+        }
+        else{
+            window.location.href='otp.html'
+        }
+    }
+
+</script>
